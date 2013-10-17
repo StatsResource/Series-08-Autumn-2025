@@ -1,0 +1,22 @@
+In this study, we examine the effect on particular specifications for simulating measurements has on the outcome of the method comparison study approach proposed in Roy (2009).
+The simulated data sets are intended to be similar to the data set used in Roy’s paper, a data set  that was also previously used in Bland and Altman (1999). (However a close approximation of that data set is not necessary). This data set ,”Blood”, describes three replicate measurements taken by two methods simultaneously. There are 85 observations at each time interval, yielding 510 observations in total. The methods  are simply described as “J”, “S” and “R”.
+Simulated values for each observation method can be generated using the R command  mvrnorm(),available through the MASS package.
+The mean value for the observations, by both methods, are specified as arguments. Thus an inter-method bias may be induced.  As existing methodologies are sufficient to appropriately determine inter-method bias between methods of measurement,  this will be a secondary concern of this study.
+Of primary importance is the role that the variance-covariance matrix of the observed values plays in the subsequent analyses for within-item and between-item variability. Therefore this VC matrix must be studied thoroughly.
+As the data set has 3 replicates for each case, a 3 x 3 variance covariance matrix must be specified at the simulation stage.  Discerning the effect of various specifications on the subsequent analyses will be a key outcome of this study.
+As discussed by Roy (2009) the time structure is relevant. As such,  VC matrix specifications shall be be based on numerous correlation structures ( i.e. Compound symmetry and Symmetric) .
+
+1.00 0.95 0.95
+0.95 1.00 0.95
+0.95 0.95 1.00
+
+ 
+
+
+1.0000 0.9500 0.9025
+0.9500 1.0000 0.9500
+0.9025 0.9500 1.0000
+
+ 
+
+
