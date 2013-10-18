@@ -1,0 +1,241 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{framed}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode"CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 201113:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\pagestyle{fancy}
+\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+\lhead{Method Comparison Studies} \chead{Kevin O'Brien} \rhead{March 2013}%\input{tcilatex}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+In this study, we examine the effect on particular specifications for simulating measurements has on the outcome of the method comparison study approach proposed in Roy (2009).
+
+The simulated data sets are intended to be similar to the data set used in Roys paper, a data set that was previously used in Bland and Altman (1999). (However a close approximation of that data set is not necessary). This data set ,``Blood", describes three replicate measurements taken by two methods simultaneously. There are 85 observations at each time interval, yielding 510 observations in total. The methods  are simply described as ``J", ``S" and ``R".
+
+Simulated values for each observation method can be generated using the R command  \texttt{mvrnorm()},available through the \texttt{MASS} package.
+
+The mean value for the observations, by both methods, are specified as arguments. Thus an inter-method bias may be induced.  As existing methodologies are sufficient to appropriately determine inter-method bias between methods of measurement,  this will be a secondary concern of this study.
+
+Of primary importance is the role that the variance-covariance matrix of the observed values plays in the subsequent analyses for within-item and between-item variability. Therefore this VC matrix must be studied thoroughly.
+
+As the data set has 3 replicates for each case, a $3 \times  3$ variance covariance matrix must be specified at the simulation stage.  Discerning the effect of various specifications on the subsequent analyses will be a key outcome of this study.
+
+As discussed by Roy (2009) the time structure is relevant. As such,  VC matrix specifications shall be be based on numerous correlation structures ( i.e. Compound symmetry and Symmetric) .
+
+\[
+\boldsymbol{R}_1 = \left(\begin{array}{ccc}
+1.00 & \rho & \rho \\
+\rho & 1.00 & \rho \\
+\rho & \rho & 1.00\\
+\end{array} \right)
+=
+\left(\begin{array}{ccc}
+1.00 & 0.95 & 0.95 \\
+0.95 & 1.00 & 0.95 \\
+0.95 & 0.95 & 1.00\\
+\end{array} \right)\]
+
+
+\[ \boldsymbol{R}_2 = \left(\begin{array}{ccc}
+1.00 & \rho & \rho^2 \\
+\rho & 1.00 & \rho \\
+\rho^2 & \rho & 1.00\\
+\end{array} \right)
+=
+\left(\begin{array}{ccc}
+1.0000 & 0.9500 & 0.9025 \\
+0.9500 & 1.0000 & 0.9500 \\
+0.9025 & 0.9500 & 1.0000 \\
+\end{array} \right)\]
+
+%---------------------------------------------------------------------------%
+
+
+\begin{framed}
+\begin{verbatim}
+n=3;rho=0.95;
+
+CorMat=diag(n);
+for (i in 1:n)
+  {
+  for  (j in 1:n)
+    {
+    if(i != j ){CorMat[i,j]=rho}
+    }
+  }
+CorMat;
+\end{verbatim}
+\end{framed}
+
+
+%-----------------------------------------------------------------------------------%
+
+\begin{framed}
+\begin{verbatim}
+n=3;rho=0.95;
+
+CorMat2=diag(n);
+for (i in 1:n)
+  {
+  for  (j in 1:n)
+    {
+    {CorMat2[i,j]=rho^(abs(i-j))}
+    }
+  }
+CorMat2;
+\end{verbatim}
+\end{framed}
+
+%-----------------------------------------------------------------------------------%
+
+For the J column of the blood data, the covariance matrix was found to be
+
+The correlation matrix (found using the \texttt{R} command \texttt{cov2cor()}) is presented subsequently.
+
+
+As a proxy for the variance values, we will use the following.
+
+\begin{framed}
+\begin{verbatim}
+n=3;rho=0.95;
+
+CorMat2=diag(n);
+for (i in 1:n)
+  {
+  for  (j in 1:n)
+    {
+    {CorMat[i,j]=rho^(abs(i-j))}
+    }
+  }
+CorMat;
+\end{verbatim}
+\end{framed}
+
+
+\subsection{Inter-method Bias}
+
+By multiple method comparison studies, including Roy's 2009 paper, the inter-method bias between J and S was found to be 127.
+For the simulated data set, an inter-method bias of 125 will be encoded.
+
+
+\begin{framed}
+\begin{verbatim}
+J.prime = mvrnorm()
+S.prime = mvrnorm()
+\end{verbatim}
+\end{framed}
+
+Roy's three tests are then fitted to the simulated data sets. For a fixed numbers of iterations, the following statistics were determined.
+\begin{itemize}
+\item The realized value for inter-method bias,
+\item The result of the within-subject variability,
+\item The result of the between-subject variability.
+\end{itemize}
+
+\section{Simulation Study No 1}
+
+
+%-----------------------------------------------------------------------------------%
+
+We are using the Multivariate Normal Distribution to simulate values that according with the JSR Blood data set.
+A data set is simulated using the \texttt{R} command \texttt{mvrnorm()}, with the additional arguments
+
+\begin{description}
+\item[n] : Number of Rows
+\item[mu] : A vector for the m Mean values
+\item[sigma] : An $m \times m$ variance covariance matrix
+\end{description}
+
+\begin{framed}
+\begin{verbatim}
+> cov(Blood[,1:3])
+         J1       J2       J3
+J1 990.2275 957.4818 912.6445
+J2 957.4818 994.7339 936.0154
+J3 912.6445 936.0154 931.1927
+
+> cor(Blood[,1:3])
+          J1        J2        J3
+J1 1.0000000 0.9647384 0.9504174
+J2 0.9647384 1.0000000 0.9725451
+J3 0.9504174 0.9725451 1.0000000
+\end{verbatim}
+\end{framed}
+
+%At the foot of this email you will find some R code. This is an initial attempt on my behalf to understand the use of the LME model for MCS. 
+%
+%
+%I am assuming that each subject provides two replicates on each of two method. I am supplying the R code to you with settings that specify the most boring (null) model I can think of; that is no bias between methods, a shared between-subjects uncorrelated random effect, independent measurement noise. 
+%
+%I have blanked out other more interesting settings with the hash # symbol, and have chosen the values from Roy's paper as a suitable region to explore. I would suggest you do the following.
+
+
+
+
+make sure the simulation routine is correct. Obviously go through my code line-by-line. You can further check the simulation routine is correct by fitting Roy's model in nlme and the outputs should be in the same ball park if you run the routine with the values to the right of the hash symbols.
+
+
+
+ Once it is correct, enwrap the code into a function (with appropriate default parameters) that draws a plot as suggested.
+
+
+
+Modify the function in [2] to draw 4 plots at a time, for a given setting. The simple approach would be to use a $2\times2$ multiple figure using the mfrow setting in par. I was hoping however that you could use your R know how to run four graphical windows (devices) and we can tile them manually.
+
+
+\begin{itemize}
+\item Vary bias. See what happens. Reset bias to zero.
+\item Vary correlation between random effects.
+\item Vary variances of random effects when cor is zero and non-zero.
+\item  Vary elements of sigma.
+\end{itemize}
+
+
+
+\begin{framed}
+\begin{verbatim}
+# libraries
+library(MASS)
+
+n = 20
+bias = 0#10
+
+lambda = 1#1.05
+rho = 0#0.83
+Psi = diag( 924 * c(1,lambda) )
+Psi[1,2] = Psi[2,1] = rho * sqrt(Psi[1,1] * Psi[2,2])
+
+upsilon = 1#2.22
+gamma = 0#0.3
+Sigma = diag( 37.4 * c(1,upsilon) )
+Sigma[1,2] = Sigma[2,1] = gamma * sqrt(Sigma[1,1] * Sigma[2,2])
+
+Z = cbind(rep(c(1,0),2), rep(c(0,1),2))
+
+b = mvrnorm(n, mu = rep(0,2), Sigma = Sigma) e = c(t(mvrnorm(2*n, mu = rep(0,2), Sigma = Sigma))) Y = rep(c(100,100+bias),2*n) + c(Z%*% t(b)) + e dat = data.frame(Y, Subject= rep(seq(n), rep(4,n)),  Method= rep(c("Standard","New"),2*n), Replication= rep(c(1,1,2,2),n))
+
+x = unlist(subset(dat, subset= Method == "Standard", select = Y)) y = unlist(subset(dat, subset= Method == "New", select = Y))
+
+plot(x,y, pch= 16, cex=0.5, col = rep((1:20), rep(2,20))) abline(c(0,1), col="grey") for(i in 1:n) segments(x[2*i -1],y[2*i -1],x[2*i],y[2*i], lwd=0.8, lty=1, col = i)
+
+\end{verbatim}
+\end{framed}
+
+\end{document}
