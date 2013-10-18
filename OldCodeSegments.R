@@ -1,13 +1,8 @@
 
 
-Y=c(35.6,47.9,34.2,31.2,49.5,30.5,32.7,49.3,31.0,28.7)
-mean(Y);sd(Y);
-median(Y)
-
-
-Z = c(3,2,6,5,40,2,9,3,5,3,8,6,4,8,8,7,5,10,15,9,2,1,8,4,7,1,17,2,6,8,3,15,5,3,5,3,11,5,16,20)
 
 #######################################################################################################
+# JSR Blood Data
 
 blood = groupedData( y ~ meth | item ,
     data = data.frame( y = c(Blood), item = c(row(Blood)),
@@ -17,18 +12,16 @@ blood = groupedData( y ~ meth | item ,
     order.groups = FALSE )
 
 
-
 # make a data frame containing J and S groups only:
 
 datJS = subset(blood, subset = meth != "R")
 datRS = subset(blood, subset = meth != "J")
 datJR = subset(blood, subset = meth != "S")
 
-
-
-
 datJS$item <- factor(datJS$item)
 datJS$repl <- factor(datJS$repl)
+
+####################################################################################################
 
 lme( y ~ meth + item,
  random = list( item = pdIdent( ~ meth-1 ) ),
@@ -128,15 +121,6 @@ MCS3 = lme(BP ~ method-1, data = ox,
 random = list(subject=pdSymm(~ method-1)),
 weights=varIdent(form=~1|method), correlation = corSymm(form=~1 | subject/obs), method="ML")
 
-
-
-AP=c(
-16,18,18,19,20,20,20,21,21,21,
-22,25,25,26,26,26,26,28,30,31,
-32,32,32,32,32,35,35,36,26,37,
-38,44,46,48,51,52,52,53,59,64)
-
-boxplot(AP, horizontal =TRUE)
 
 
 
