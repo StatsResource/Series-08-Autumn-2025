@@ -1,0 +1,257 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[Stats-Lab.com]{\LARGE Introduction to Statistics and Probability \\ {\Large Chi-Square Test : }}
+\author[Kevin O'Brien]{Kevin O'Brien}
+\date{Spring 2014}
+
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%-----------------------------------------------------------------------------------------%
+\begin{frame}
+	Contingency tables are used to examine the relationship between subjects' scores on two qualitative or categorical variables. 
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example}
+	\begin{itemize}
+		\item Consider the hypothetical experiment on the effectiveness of early childhood intervention programs described in another section.
+		\item In the experimental group, 73 of 85 students graduated from high school. In the control group, only 43 of 82 students graduated. These data are depicted in the contingency table shown below.
+	\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------- %
+\begin{frame}
+	\frametitle{Chi Square test for goodness of fit}
+	The chi-squared test applied to contingency tables.
+	
+The Chi-squared test is the most commonly used test for frequency data and goodness-of-fit. In theory, it is nonparametric but because it has no parametric equivalent, it is not classified as such. It is not an exact test and with the current level of computing facilities, there is not much excuse not to use Fishers exact test for $2\times2$ contingency table analysis instead of Chi-squared test. 
+	
+\end{frame}
+
+%======================================================================%
+%======================================================================%
+\begin{frame}
+	%UoLep Stats Section 14
+	Tests for Goodness of Fit
+	\begin{itemize}
+		\item Basic Counting Model
+		\item Goodness of Fit Statistics
+		\item Testing with unknown parameters
+		\item Testing for association in two-way tables
+	\end{itemize}
+	
+\end{frame}
+%======================================================================%
+%======================================================================%
+\begin{frame}
+	\frametitle{Pearson's chi-squared test}
+	
+	Chi Square
+	
+	\begin{description}
+		\item[Null Hypothesis]
+		There is no relationship between the two categorical variables
+		
+		\item[Alternative Hypothesis]
+		There is a relationship between the two categorical variables
+	\end{description}
+\end{frame}
+%=============================================%
+\begin{frame}
+\begin{itemize}
+	\item Observed Values
+	
+	\item Expected Values (under the null hypothesis)
+\end{itemize}
+	
+	
+	Are the differences between Observed values and the Expected values
+	small enough to be due to random error (i.e. null hypothesis is valid)
+	or too large for the null hypothesis to be feasible?
+\end{frame}
+%=============================================%
+\begin{frame}
+	Expected values for each cell
+	
+	Row Total Column Total
+	Overall Total
+	
+	E-O/E
+	
+\end{frame}
+%=============================================%
+\begin{frame}
+	\frametitle{Degrees of freedom}
+	
+	\[df=(r-1)(c-1)\]
+	
+	\begin{itemize}
+		\item[r] = number of rows
+		\item[c] = number of columns
+	\end{itemize}
+	
+	2 rows and 3 columns r = 2 c = 3 
+	\[df= (2-1)(3-1) = (1)(2) = 2\]
+	
+	
+\end{frame}
+%=============================================%
+\begin{frame}
+	
+	
+	Pearson's chi-squared test uses a measure of goodness of fit which is the sum of differences between observed and expected outcome frequencies (that is, counts of observations), each squared and divided by the expectation:
+	\[ \chi^2 = \sum_{i=1}^n {\frac{(O_i - E_i)}{E_i}^2} \]
+	where:
+	
+	\begin{itemize}
+		\item[Oi] = an observed frequency (i.e. count) for bin i
+		\item[Ei] = an expected (theoretical) frequency for bin i, asserted by the null hypothesis.
+	\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------------------------------%
+
+\begin{frame}
+	
+	Also for larger contingency tables, the G-test (log-likelihood ratio test) may be a better choice. The Chi-square value is obtained by summing up the values (residual2/fit) for each cell in a contingency. In this formula, residual is the difference between the observed value and its expected counterpart and fit is the expected value.
+\end{frame}
+
+%-----------------------------------------------------------------------------------------%
+
+\begin{frame}
+	\noindent \textbf{Yates's correction}
+	The approximation of the Chi-square statistic in small $2\times2$ tables can be improved by reducing the absolute value of differences between expected and observed frequencies by 0.5 before squaring. This correction, which makes the estimation more conservative, is usually applied when the table contains only small observed frequencies ($<20$).
+	
+	The effect of this correction is to bring the distribution based on discontinuous frequencies nearer to the continuous Chi-squared distribution. This correction is best suited to the contingency tables with fixed marginal totals. Its use in other types of contingency tables (for independence and homogeneity) results in very conservative significance probabilities. This correction is no longer needed since exact tests are available.
+\end{frame}
+
+%-----------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+Expected Value for a Cell
+
+\[ = \frac{\mbox{Column Total}  \times \mbox{Row Total} } {\mbox{Overall Total}}  \]
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+
+
+
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+\begin{itemize}
+\item Compute the expected values for each cell in the following table.
+\item One of the expected values (both A and Y) is given.
+\end{itemize}
+\begin{center}
+\Large
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & & 60 &  & 200\\ \hline
+Cat B & &  &  & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+
+\end{frame}
+
+
+%---------------------------------------------%
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\textbf{Cell$_{(2,1)}$}\
+\begin{itemize}
+\item Row 2 : Row Total = 400
+\item Column 1 : Column Total = 150
+\item Overall Total = 600
+\end{itemize}
+
+Expected value for Cell$_{(2,1)}$
+
+\[ E_{(2,1)} = frac{400 \times 150}{600} = \frac{60,000}{600} = 100 \]
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\LARGE
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & 50 & 60 &  & 200\\ \hline
+Cat B & \phantom{s}100\phantom{s}& \phantom{space} & \phantom{space} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\LARGE
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & 50 & 60 & 90  & 200\\ \hline
+Cat B & \phantom{s}100\phantom{s}& \phantom{s}120\phantom{s} & \phantom{s}180\phantom{s} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+\end{frame}
+%---------------------------------------------%
+
+\end{document}

@@ -1,0 +1,141 @@
+
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[Stats-Lab.com]{\LARGE Introduction to Statistics and Probability \\ {\Large Chi-Square Test : }}
+\author[Kevin O'Brien]{Kevin O'Brien}
+\date{Spring 2014}
+
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%---------------------------------------------%
+\begin{frame}
+	\frametitle{Chi-Square Test of Association}
+	% Writing
+	
+	\Large
+	\textbf{Cell$_{(1,1)}$}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline & Cat X & Cat Y & Cat Z & Total  \\ \hline
+			Cat A & \alert{\ldots}& 60 &  & 200\\ \hline
+			Cat B & \phantom{space}& \phantom{space} & \phantom{space} & 400 \\ \hline
+			Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+			
+		\end{tabular} 
+	\end{center}
+	
+\end{frame}
+%---------------------------------------------%
+
+\begin{frame}
+	\frametitle{Chi-Square Test of Association}
+	\Large
+	\textbf{Cell$_{(1,1)}$}
+	\begin{itemize}
+		\item Row 1 : Row Total = 200
+		\item Column 1 : Column Total = 150
+		\item Overall Total = 600
+	\end{itemize}
+	\bigskip
+	
+	
+	Expected value for Cell$_{(1,1)}$
+	
+	\[ E_{(1,1)} = \frac{200 \times 150}{600} = \frac{30,000}{600} = 50 \]
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+	\frametitle{Chi-Square Test of Association}
+	% Writing
+	
+	\Large
+	Expected values for all of the other cells can be computed the same way.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline & Cat X & Cat Y & Cat Z & Total  \\ \hline
+			Cat A & 50 & 60 &  & 200\\ \hline
+			Cat B & \phantom{space}& \phantom{space} & \phantom{space} & 400 \\ \hline
+			Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+			
+		\end{tabular} 
+	\end{center}
+	
+	
+\end{frame}
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+\textbf{Critical Value}
+
+\begin{itemize}
+\item Signifiance Level $\alpha$
+\item Degrees of freedom $\nu$ (also referred to as $d.f.$)
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+\Large
+\vspace{-1cm}
+The degrees of freedom $\nu$
+
+\[ \nu  = (r-1) \times (c-1) \]
+
+
+\begin{itemize}
+\item $r$ number of rows in frequency table
+\item $c$ number of columns in frequency table
+\end{itemize}
+
+\end{frame}
+
+%---------------------------------------------%
+\section{Goodness of Fit}
+\begin{frame}
+\frametitle{Chi-Square Goodness of Fit}
+\Large
+\vspace{-1cm}
+30 Observations are thought to be indepedent realizations of a Poisson Random Variable $X$ with mean 6.
+
+\begin{itemize}
+\item $X \leq 4$ 10 occurrences
+\item $4 < X \leq 7$ 8 occurrences
+\item $ X >7$ 12
+\end{itemize}
+Test the hypothesis that the observations on $X$ are from a Poisson Distribution with mean 6.
+\end{frame}
+%---------------------------------------------%
+\end{document}
