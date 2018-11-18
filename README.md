@@ -1,4 +1,4 @@
-SimulationStudies
+Chi Square Test For Independence
 =================
 
-Simulation Studies
+Chi Square Test For Independence of two categorical variables
