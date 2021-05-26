@@ -70,40 +70,8 @@ The expected value for cell (i,j) is computed as
 % 15 &   35  &  50 
 
 
-\end{frame}
-%----------------------------------------------------------%
-\begin{frame}
-\frametitle{Chi Square Test}
-Determine the contribution of each cell to the overall test statistics
 
 
-\[  \frac{\mbox{Row Total}\times \mbox{Column Total}}{\mbox{Overall Total}} \]
-
-\end{frame}
-%----------------------------------------------------------%
-\begin{frame}
-\frametitle{Chi Square Test = Computing the critical value}
-The degrees of freedom ( df or $\eta$ ) is computed as
-
-\[ \eta = (r-1)\times(c-1) \]
-
-\begin{itemize}
-\item $r$ number of rows
-\item $c$ number of columns
-\end{itemize}
-\end{frame}
-
-%----------------------------------------------------------%
-\begin{frame}
-
-END SLIDE
-
-
-\end{frame}
-%----------------------------------------------------------%
-\end{document}
-
-Tags
 Chi Square, Chi-Square, Chi-Squared , Chi-Square test, Chi-squared test, Chi-square test for relationship
 testing association, Chi testing, Chi square hypothesis test, X squared, hypothesis testing,
 Chi Square hypothesis test,
