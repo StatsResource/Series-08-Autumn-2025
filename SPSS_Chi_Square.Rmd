@@ -1,0 +1,76 @@
+
+### Section: Chi-Square Test for Association using SPSS Statistics
+
+#### Introduction
+The chi-square test for independence (Pearson's chi-square test) is used to determine if there is a relationship between two categorical variables.
+
+#### Assumptions
+To use a chi-square test for independence, data must meet two assumptions:
+1. **Variable Measurement**: Variables should be measured at an ordinal or nominal level (categorical data).
+2. **Categorical Independent Groups**: Variables should consist of two or more independent groups. Examples include gender, ethnicity, activity level, profession, etc.
+
+#### SPSS Example
+An educator wants to know if gender (male/female) is associated with the preferred type of learning medium (online/books). Thus, we have two nominal variables: Gender and Preferred Learning Medium.
+
+- **Setup in SPSS Statistics**: Create variables for Gender and Preferred\_Learning\_Medium.
+- **Test Procedure in SPSS Statistics**: Follow these steps to analyze your data using the chi-square test for independence:
+  1. Click Analyze > Descriptive Statistics > Crosstabs.
+  2. Transfer the variables into the Row(s) and Column(s) boxes.
+  3. To display clustered bar charts, check the Display clustered bar charts checkbox.
+
+#### Steps for Chi-Square Test in SPSS Statistics:
+1. Click Analyze > Descriptive Statistics > Crosstabs.
+2. Transfer Gender to Row(s) box and Preferred\_Learning\_Medium to Column(s) box.
+3. Check Display clustered bar charts.
+4. Click Statistics button, select Chi-square and Phi and Cramer's V.
+5. Click Continue.
+6. Click Cells button, select Observed from Counts area, and Row, Column, and Total from Percentages area.
+7. Click Continue.
+8. Optionally, adjust the order of values.
+9. Click Continue.
+10. Generate output.
+
+- **Output**: Check the Crosstabulation Table and Chi-Square Tests Table. Look for the Pearson Chi-Square row to see if there is a significant association between variables.
+
+---
+
+
+
+### Section: Chi-Square Test for Association using SPSS Statistics
+
+#### Introduction
+The chi-square test for independence, also known as Pearson's chi-square test or the chi-square test of association, is used to determine if there is a relationship between two categorical variables.
+
+#### Assumptions
+To use a chi-square test for independence, your data must meet two key assumptions:
+
+1. **Measurement Level**: Both variables should be measured at an ordinal or nominal level (categorical data).
+2. **Categorical Independent Groups**: Each variable should consist of two or more categorical, independent groups. Examples include gender (male/female), ethnicity (Caucasian, African American, Hispanic), physical activity level (sedentary, low, moderate, high), and profession (surgeon, doctor, nurse, dentist, therapist).
+
+In the Procedure section, we'll illustrate how to perform a chi-square test for independence using SPSS Statistics with an example.
+
+#### SPSS Example
+Consider an educator who wants to determine if there is a relationship between gender (male/female) and the preferred learning medium (online/books). Hence, we have two nominal variables: Gender and Preferred Learning Medium.
+
+##### Setup in SPSS Statistics
+Create two variables in SPSS Statistics: Gender and Preferred\_Learning\_Medium. Our enhanced guide provides detailed steps on entering data into SPSS Statistics for running a chi-square test for independence.
+
+##### Test Procedure in SPSS Statistics
+Follow these steps to analyze your data using a chi-square test for independence in SPSS Statistics. At the end of these steps, you'll learn how to interpret the results:
+
+1. **Click Analyze > Descriptive Statistics > Crosstabs**
+2. **Transfer Variables**: Transfer Gender to the Row(s) box and Preferred\_Learning\_Medium to the Column(s) box. Use the mouse to highlight and transfer or drag-and-drop the variables.
+3. **Display Bar Charts**: Check the Display clustered bar charts checkbox (recommended).
+4. **Open Crosstabs: Statistics Dialog Box**: Click the Statistics button, select Chi-square and Phi and Cramer's V.
+5. **Continue to Next Steps**: Click Continue, then click the Cells button.
+6. **Select Counts and Percentages**: In the Cells dialog box, select Observed from the Counts area, and Row, Column, and Total from the Percentages area.
+7. **Further Format Options**: Optionally, click the Format button to change the order of values to either ascending or descending (useful if there are more than two categories).
+8. **Generate Output**: Click Continue and then the Generate button to create your output.
+
+##### Output Interpretation
+You'll see several tables in the Output Viewer under "Crosstabs":
+
+- **Crosstabulation Table**: Displays the distribution of males and females across the preferred learning mediums.
+- **Chi-Square Tests Table**: Check the "Pearson Chi-Square" row for statistical significance. For example, \(\chi^2(1) = 0.487\), \(p = 0.485\) indicates no significant association between gender and preferred learning medium.
+- **Symmetric Measures Table**: Phi and Cramer's V provide the strength of association between variables.
+- **Bar Chart**: Visual representation of the frequency distribution, making it easier to understand the data.
