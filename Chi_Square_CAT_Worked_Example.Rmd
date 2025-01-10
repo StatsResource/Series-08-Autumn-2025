@@ -1,0 +1,82 @@
+Here is the tidied up text in markdown format with duplications removed:
+
+```markdown
+## Compute Expected Values
+
+1. Compute the expected values for each cell in the following table.
+2. One of the expected values (both A and Y) is given.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Cat X & Cat Y & Cat Z & Total \\ \hline
+Cat A &  & 60 &  & 200 \\ \hline
+Cat B &  &  &  & 400 \\ \hline
+Total & 150 & 180 & 270 & \textbf{600} \\ \hline
+\end{tabular}
+\end{center}
+
+### Expected Value for Cell (2,1)
+
+- Row 2: Row Total = 400
+- Column 1: Column Total = 150
+- Overall Total = 600
+
+Expected value for Cell (2,1):
+
+\[ E_{(2,1)} = \frac{400 \times 150}{600} = 100 \]
+
+### Updated Contingency Table
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total \\ \hline
+Cat A & 50 & 60 & 90 & 200 \\ \hline
+Cat B & 100 & 120 & 180 & 400 \\ \hline
+Total & 150 & 180 & 270 & \textbf{600} \\ \hline
+\end{tabular}
+\end{center}
+
+---
+
+### Chi-Square Test of Association
+
+#### Expected Value for a Cell
+
+\[ E = \frac{\text{Column Total} \times \text{Row Total}}{\text{Overall Total}} \]
+
+Compute the expected values for each cell in the following table:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Cat X & Cat Y & Cat Z & Total \\ \hline
+Cat A & & 60 &  & 200 \\ \hline
+Cat B & & & & 400 \\ \hline
+Total & 150 & 180 & 270 & 600 \\ \hline
+\end{tabular}
+\end{center}
+
+#### Expected value for Cell \((2,1)\):
+
+- Row 2 Total = 400
+- Column 1 Total = 150
+- Overall Total = 600
+
+\[ E_{(2,1)} = \frac{400 \times 150}{600} = 100 \]
+
+#### Updated Contingency Table with Computed Values
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total \\ \hline
+Cat A & 50 & 60 & 90 & 200 \\ \hline
+Cat B & 100 & 120 & 180 & 400 \\ \hline
+Total & 150 & 180 & 270 & \textbf{600} \\ \hline
+\end{tabular}
+\end{center}
+```
+
+Feel free to use this cleaned-up markdown script! If there's anything else you need, let me know.
