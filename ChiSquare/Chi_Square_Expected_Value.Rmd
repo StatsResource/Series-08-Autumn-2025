@@ -1,0 +1,35 @@
+### Chi-Square: Expected Values
+
+- **Calculation**: The expected value for each cell is given by:
+  \[
+  \text{Expected Value} = \frac{\text{Row Total} \times \text{Column Total}}{\text{Overall Total}}
+  \]
+
+The test statistic is then compared to a critical value to determine if the null hypothesis can be rejected.
+
+---
+
+### Chi-Square: Expected Values
+
+- **Expected Value Calculation**: The expected value for cell \((i,j)\) is computed as:
+  \[
+  \text{Expected Value} = \frac{\text{Row Total} \times \text{Column Total}}{\text{Overall Total}}
+  \]
+
+The final hypothesis test involves comparing the calculated chi-square statistic to the critical value from the chi-square distribution to determine if the null hypothesis can be rejected.
+
+
+---
+
+### Expected Values and Chi-Square Statistic
+
+- **Expected Value Formula**:
+  \[
+  \text{Expected Value} = \frac{\text{Row Total} \times \text{Column Total}}{\text{Overall Total}}
+  \]
+- **Chi-Square Test Statistic**:
+  \[
+  \chi^2_{TS} = \sum \frac{(n_i - e_i)^2}{e_i}
+  \]
+
+---
