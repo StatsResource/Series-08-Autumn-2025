@@ -1,0 +1,101 @@
+
+### Section: Chi Square Test
+
+Replace the question marks with the expected number of observations in a cell under the null hypothesis that the choice of course does not depend on gender.
+
+**Expected Values (under null hypothesis)**
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|} 
+		& Maths & Eq. Studies & Chemistry & Sum \\ 
+		Male & 15 & 15 & 30 & 60 \\ 
+		Female & 15 & 15 & 30 & 60 \\ 
+		Sum & 30 & 30 & 60 & 120 \\
+	\end{tabular} 
+\end{center}
+
+############################################
+
+### Chi-Square Test for Independence
+
+#### Hypotheses
+- **Null Hypothesis (H$_0$)**: Hair color and eye color are independent.
+- **Alternative Hypothesis (H$_1$)**: Hair and eye color are dependent.
+
+#### Row and Column Sums
+- The number of people with blue eyes is the sum of the first row (150).
+- The number of people with brown eyes is the sum of the second row (150).
+- The total number of individuals is 300.
+
+#### Expected Number of Observations
+If traits are independent, the probability of having a given hair and eye color is the product of the individual probabilities.
+
+\[ \text{P(blond hair, blue eyes)} = \text{P(blond hair)} \times \text{P(blue eyes)} \]
+
+The expected number of observations for each cell under the null hypothesis is calculated as:
+
+\[ e_{i,j} = \frac{n_{i,\cdot} \cdot n_{\cdot,j}}{n} \]
+
+This is the row sum times the column sum divided by the total number of observations.
+
+#### Test Statistic
+The test statistic is calculated as:
+
+\[ T = \sum_{i,j} \frac{(n_{i,j} - e_{i,j})^2}{e_{i,j}} \]
+
+- The realization of this statistic, \( t \), measures the distance of observations from expectations under H$_0$.
+- If H$_0$ is true, \( n_{i,j} \) and \( e_{i,j} \) should be similar, making \( t \) close to 0. Large values of \( t \) suggest dependence.
+
+---
+Your presentation on the Chi-Square Test for Independence is looking comprehensive and detailed! Here is a bit more on the topic based on your latest text:
+
+---
+
+### Chi Square Test For Independence
+
+#### Distribution of the Test Statistic Under \( H_0 \)
+
+- **Approximate Distribution**: If the traits are independent, the test statistic has an approximate chi-squared distribution with \((r - 1) \times (c - 1)\) degrees of freedom. Here, \(r\) and \(c\) represent the number of rows and columns respectively in the contingency table.
+- **Approximation Validity**: This approximation holds well if there are at least 5 observations expected in each cell under the null hypothesis (\( H_0 \)).
+
+---
+
+### Making Conclusions
+
+- **Interpretation of \( t \)**: Large values of \( t \) suggest that the traits are dependent. To reject the null hypothesis of independence at a significance level \(\alpha\), we compare \( t \) with the critical value of the chi-squared distribution, \( \chi^2_{(r-1)(c-1), \alpha} \).
+- **Critical Values Reference**: These critical values can be obtained from standard chi-squared distribution tables.
+
+---
+
+### Describing the Nature of an Association
+
+- **Comparative Analysis**: To discern the nature of the association, compare observed values with expected values.
+- **Observations**: For instance, if you observe more dark hair with brown eyes and blond hair with blue eyes than expected under \( H_0 \), it suggests an association between these traits.
+
+
+
+### Distribution of the Test Statistic Under \(H_0\)
+
+- **Test Statistic Distribution**: Given the traits are independent, the test statistic follows an approximate chi-squared distribution with \((r - 1) \times (c - 1)\) degrees of freedom, where \(r\) and \(c\) are the numbers of rows and columns, respectively.
+- **Approximation Validity**: This approximation is valid if at least 5 observations are expected in each cell under \(H_0\).
+
+### Making Conclusions
+
+- **Significance Level**: Large values of \(t\) indicate dependence between the traits. We reject the null hypothesis of independence at a significance level \(\alpha\) if \( t > \chi^2_{(r-1)(c-1),\alpha} \), where \(\chi^2_{(r-1)(c-1),\alpha}\) is the critical value for the appropriate chi-squared distribution.
+- **Critical Values**: These values can be referenced from statistical tables.
+
+### Describing the Nature of an Association
+
+- **Comparison**: To understand the association between hair and eye color, compare observed and expected values.
+- **Observations**: For instance, if dark hair is associated with brown eyes and blond hair with blue eyes, it suggests more observations than expected under the null hypothesis.
+
+### Expected Values and Chi-Square Statistic
+
+- **Expected Value Formula**:
+  \[
+  \text{Expected Value} = \frac{\text{Row Total} \times \text{Column Total}}{\text{Overall Total}}
+  \]
+- **Chi-Square Test Statistic**:
+  \[
+  \chi^2_{TS} = \sum \frac{(n_i - e_i)^2}{e_i}
+  \]
