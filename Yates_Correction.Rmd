@@ -1,0 +1,6 @@
+
+### Yates's Correction
+
+The approximation of the Chi-square statistic in small \(2 \times 2\) tables can be improved by reducing the absolute value of differences between expected and observed frequencies by 0.5 before squaring. This correction makes the estimation more conservative and is usually applied when the table contains only small observed frequencies (less than 20).
+
+The effect of this correction is to bring the distribution based on discontinuous frequencies nearer to the continuous Chi-squared distribution. This correction is best suited to contingency tables with fixed marginal totals. Its use in other types of contingency tables (for independence and homogeneity) results in very conservative significance probabilities. However, this correction is no longer needed since exact tests are available.
