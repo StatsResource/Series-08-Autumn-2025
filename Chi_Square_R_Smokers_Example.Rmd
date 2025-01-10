@@ -1,0 +1,69 @@
+Sure! Here is the R Markdown script for your Chi-Square Test analysis:
+
+```markdown
+---
+title: "Chi-Square Test"
+output: html_document
+---
+
+## Chi-Square Test
+
+In the MASS R package, we can find the data set `survey`. The `Smoke` column records the students' smoking habits, while the `Exer` column records their exercise level.
+
+```{r}
+library(MASS)
+head(survey)
+names(survey)
+```
+
+## Levels
+
+* These variables are factors (i.e., categorical variables).
+* The allowed values in `Smoke` are: `Heavy`, `Regul` (regularly), `Occas` (occasionally), and `Never`.
+* The values in `Exer` are: `Freq` (frequently), `Some`, and `None`.
+
+## Constructing the Contingency Table
+
+We can construct the contingency table of the two variables using the `table()` function. This table will compare the students' smoking habits across the various exercise levels.
+
+```{r}
+myTable <- table(survey$Smoke, survey$Exer)
+myTable
+```
+
+The contingency table is as follows:
+
+```
+       Freq None Some 
+Heavy     7    1    3 
+Never    87   18   84 
+Occas    12    3    4 
+Regul     9    1    7
+```
+
+Small Cell Sizes - This can cause problems.
+
+## Combining Levels for Exercise
+
+* `Exer` levels are: `Freq` (frequently), `Some`, and `None`.
+* Combine `Some` and `None` into a single "not frequently" level.
+* Preserve the original data by creating a new object called `Exer2`.
+
+## Hypothesis Testing
+
+Test the hypothesis whether the students' smoking habit is independent of their exercise level at a 0.05 significance level.
+
+```{r}
+# Perform Chi-Square Test
+chisq.test(myTable)
+```
+
+The p-value was found to be 0.4828.
+
+## Conclusion
+
+* The p-value 0.4828 is greater than the 0.05 significance level.
+* Therefore, we do not reject the null hypothesis that the smoking habit is independent of the exercise level of the students.
+```
+
+Feel free to run this script in RStudio to perform the analysis. If you need any more details or assistance, let me know!
