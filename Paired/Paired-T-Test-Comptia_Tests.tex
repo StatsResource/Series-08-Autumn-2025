@@ -12,5 +12,81 @@ Using the sample data in the following table, compute the case-wise differences,
 	\end{tabular} 
 \end{center}
 
- \end{enumerate}
- \end{document}
+### **Does Taking Preparatory Courses Improve Exam Performance?**
+
+To analyze the effect of preparatory courses on **standardized test scores**, we compute:
+
+1. **Case-wise Differences:** Difference between "Score After" and "Score Before" for each student.
+2. **Mean of the Case-wise Differences:** Average improvement across students.
+3. **Standard Deviation of the Case-wise Differences:** Measures variability in score improvements.
+
+---
+
+### **Step 1: Compute Case-wise Differences**
+\[
+d_i = \text{Score After} - \text{Score Before}
+\]
+
+| Student | Score Before | Score After | \( d_i \) (Difference) |
+|---------|-------------|-------------|------------------|
+| A       | 700        | 720        | 20              |
+| B       | 840        | 840        | 0               |
+| C       | 830        | 820        | -10             |
+| D       | 860        | 900        | 40              |
+| E       | 840        | 870        | 30              |
+| F       | 690        | 700        | 10              |
+| G       | 830        | 800        | -30             |
+| H       | 1180       | 1200       | 20              |
+| I       | 930        | 950        | 20              |
+| J       | 1070       | 1080       | 10              |
+
+---
+
+### **Step 2: Compute Mean Difference**
+\[
+\bar{d} = \frac{\sum d_i}{n}
+\]
+
+\[
+\bar{d} = \frac{20 + 0 - 10 + 40 + 30 + 10 - 30 + 20 + 20 + 10}{10} = \frac{110}{10} = 11
+\]
+
+So, the **mean improvement** across students is **11 points**.
+
+---
+
+### **Step 3: Compute Standard Deviation**
+\[
+s_d = \sqrt{ \frac{\sum d_i^2 - n\bar{d}^2}{n-1} }
+\]
+
+#### **Compute \( \sum d_i^2 \):**
+\[
+\sum d_i^2 = (20^2 + 0^2 + (-10)^2 + 40^2 + 30^2 + 10^2 + (-30)^2 + 20^2 + 20^2 + 10^2)
+\]
+
+\[
+= (400 + 0 + 100 + 1600 + 900 + 100 + 900 + 400 + 400 + 100) = 5900
+\]
+
+#### **Compute \( s_d \):**
+\[
+s_d = \sqrt{ \frac{5900 - 10(11)^2}{9} }
+\]
+
+\[
+s_d = \sqrt{ \frac{5900 - 1210}{9} }
+\]
+
+\[
+s_d = \sqrt{ \frac{4690}{9} } = \sqrt{521.11} \approx 22.83
+\]
+
+---
+
+### **Conclusion**
+- The **mean improvement** is **11 points**, indicating **some** effect of preparatory courses.
+- The **standard deviation** is **22.83**, suggesting **variation** in score improvement across students.
+- While some students **gained significantly**, others **showed no improvement** or even a **slight decline**.
+
+Would you like to interpret these results further or conduct additional statistical tests? 🚀
