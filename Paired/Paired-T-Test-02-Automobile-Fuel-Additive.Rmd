@@ -1,0 +1,90 @@
+Here’s a cleaned-up version of your text with improved readability and formatting:
+
+---
+
+# Example 2: Paired Difference Analysis
+
+## **(a) Problem Statement**
+An **automobile manufacturer** collects mileage data for a sample of **\( n = 10 \)** cars across different weight categories using a **standard grade of gasoline**, both **with** and **without** a particular additive.  
+
+To ensure consistency:
+- **Engines** were tuned to the same specifications before each run.  
+- **Drivers** were unaware of which gasoline type was used in each run.  
+
+**Task:**  
+Using the mileage data provided, test the **hypothesis** that there is **no difference** in mean mileage between the two conditions at the **5% significance level**.
+
+---
+
+## **Mileage Data Table**
+
+| Car | With Additive | Without Additive | \( d_i \) (Difference) | \( d_i^2 \) (Squared Difference) |
+|-----|--------------|-----------------|----------------|------------------|
+| 1   | 36.7        | 36.2            | 0.5            | 0.25             |
+| 2   | 35.8        | 35.7            | 0.1            | 0.01             |
+| 3   | 31.9        | 32.3            | -0.4           | 0.16             |
+| 4   | 29.3        | 29.6            | -0.3           | 0.09             |
+| 5   | 28.4        | 28.1            | 0.3            | 0.09             |
+| 6   | 25.7        | 25.8            | -0.1           | 0.01             |
+| 7   | 24.2        | 23.9            | 0.3            | 0.09             |
+| 8   | 22.6        | 22.0            | 0.6            | 0.36             |
+| 9   | 21.9        | 21.5            | 0.4            | 0.16             |
+| 10  | 20.3        | 20.0            | 0.3            | 0.09             |
+
+---
+
+## **(c) Computing the Mean Difference**
+The **mean of the case-wise differences** is computed as:
+
+\[
+\bar{d} = \frac{\sum d_i}{n}
+\]
+
+\[
+\bar{d} = \frac{0.5 + 0.1 - 0.4 + \dots + 0.3}{10} = 0.17
+\]
+
+Using the last column:
+
+\[
+\sum d_i^2 = (0.25 + 0.01 + 0.16 + \dots + 0.09) = 1.31
+\]
+
+---
+
+## **(d) Sample Standard Deviation**
+The **sample standard deviation** for the case-wise differences is:
+
+\[
+s_d = \sqrt{ \frac{\sum d_i^2 - n\bar{d}^2}{n-1} }
+\]
+
+Given:
+- Sample size \( n = 10 \)
+- Mean difference \( \bar{d} = 0.17 \)
+- \( \sum d_i^2 = 1.31 \)
+
+\[
+s_d = \sqrt{ \frac{1.31 - 10(0.17)^2}{9} } = 0.337
+\]
+
+The **standard error**:
+
+\[
+S.E.(\bar{d}) = \frac{s_d}{\sqrt{n}} = \frac{0.337}{\sqrt{10}} = 0.107
+\]
+
+---
+
+## **(f) Hypothesis Testing**
+### **Null and Alternative Hypotheses**
+- **\( H_0 \)**: \( \mu_d = 0 \) (Additive makes **no** difference)
+- **\( H_1 \)**: \( \mu_d \neq 0 \) (Additive makes a **significant** difference)
+
+### **Test Statistic Calculation**
+\[
+TS = \frac{0.17 - 0}{0.107} = 1.59
+\]
+
+---
+
