@@ -1,0 +1,28 @@
+Here’s a cleaned-up and well-structured version of your text for improved clarity and readability:
+
+---
+
+# **Independent Sample Means Hypothesis Test**  
+
+A **research company** is comparing two types of **cars** based on their **fuel consumption**. The following data has been collected:
+
+## **Fuel Consumption Data**  
+
+| **Metric**           | **Type A**           | **Type B**           |
+|----------------------|---------------------|---------------------|
+| **Sample Size**      | 11                  | 10                  |
+| **Mean Consumption** | 8.3 miles/L         | 9.6 miles/L         |
+| **Standard Deviation** | 1.99 miles/L      | 2.37 miles/L       |
+
+---
+
+## **Tasks**  
+
+### **(i) Hypothesis Testing at the 0.05 Level of Significance**  
+Test whether **fuel consumption** is **the same** for **both types of cars**, using a **5% significance level**.
+
+### **(ii) Hypothesis Testing with Larger Sample Sizes**  
+If the **sample sizes** were changed to **110 for Type A** and **100 for Type B**, test again at a **5% significance level** to determine if **fuel consumption is the same** for both types of cars.
+
+---
+
